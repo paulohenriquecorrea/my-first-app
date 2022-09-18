@@ -24,24 +24,16 @@ const Planets = () => {
                 setPlanets(data['planets'])
             })
         }, []); // Uso o [] para indicar que ele não deve atualizar em nenhum estado. Deve atualizar apenas quando o componente é montado.
-
-    const duplicateLastPlanet = () => {
-        let last_planet = planets[planets.length - 1];
-        setPlanets([...planets, last_planet]);
-    }
-
-    const removeLast = () => {
-        let new_planets = [ ...planets];
-        new_planets.pop();
-        setPlanets(new_planets);
-    }
-
     
+        const addPlanet = (new_planet) => {
+            setPlanets([...planets, new_planet])
+        }
+
         return (
             <Fragment>
                 <h3>Planet List</h3>
-                <button onClick={removeLast}>Remove Last</button>
-                <button onClick={duplicateLastPlanet}>Duplicate Last Planet</button>
+                <hr></hr>
+                <Form addPlanet={addPlanet} />
                 <hr></hr>
                 {
                     planets.map((planet, index) => {
@@ -61,8 +53,5 @@ const Planets = () => {
             </Fragment>
         )
 }
-// const Planets = () => {
-   
-// }
 
 export {Planets};

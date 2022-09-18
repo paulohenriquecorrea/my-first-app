@@ -4,14 +4,14 @@ const DescriptionWithLink = (props) => {
     if (props.link) {
         return (
             <Fragment>
-                <h6>{props.texto}</h6>
+                {props.texto}
                 <p><a href={props.link}>{props.link}</a></p>
             </Fragment>
         )
     } else {
         return (
             <Fragment>
-                <p><u>{props.texto}</u></p>
+                <p>{props.texto}</p>
             </Fragment>
         )
     }
