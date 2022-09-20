@@ -54,4 +54,4 @@ const Planets = () => {
         )
 }
 
-export {Planets};
+export {Planets}
